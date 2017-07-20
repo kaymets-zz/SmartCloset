@@ -1,0 +1,930 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('th').click(function () {
+                var table = $(this).parents('table').eq(0)
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                this.asc = !this.asc
+                if (!this.asc) { rows = rows.reverse() }
+                for (var i = 0; i < rows.length; i++) { table.append(rows[i]) }
+            })
+            function comparer(index) {
+                return function (a, b) {
+                    var valA = getCellValue(a, index), valB = getCellValue(b, index)
+                    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+                }
+            }
+            function getCellValue(row, index) { return $(row).children('td').eq(index).html() }
+
+            createClothesTable();
+        });
+    </script>
+</head>
+<body>
+    <table class="named-color-table" data-dfn-type="value" data-dfn-for="<color>">
+        <thead>
+            <tr>
+                <th style="background: black;">Named
+                <th>Numeric
+                <th>Color&nbsp;name
+                <th>Hex&nbsp;rgb
+                <th>Decimal
+            </tr>
+        <tbody>
+            <tr>
+                <td style="background: aliceblue;">&nbsp;
+                <td style="background: rgb(240, 248, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-aliceblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">aliceblue<a class="self-link" href="#valdef-color-aliceblue"></a></dfn>
+                <td>#f0f8ff
+                <td>240,248,255
+            <tr>
+                <td style="background: antiquewhite;">&nbsp;
+                <td style="background: rgb(250, 235, 215);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-antiquewhite" data-export="" data-dfn-type="value" data-dfn-for="<color>">antiquewhite<a class="self-link" href="#valdef-color-antiquewhite"></a></dfn>
+                <td>#faebd7
+                <td>250,235,215
+            <tr>
+                <td style="background: aqua;">&nbsp;
+                <td style="background: rgb(0, 255, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-aqua" data-export="" data-dfn-type="value" data-dfn-for="<color>">aqua<a class="self-link" href="#valdef-color-aqua"></a></dfn>
+                <td>#00ffff
+                <td>0,255,255
+            <tr>
+                <td style="background: aquamarine;">&nbsp;
+                <td style="background: rgb(127, 255, 212);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-aquamarine" data-export="" data-dfn-type="value" data-dfn-for="<color>">aquamarine<a class="self-link" href="#valdef-color-aquamarine"></a></dfn>
+                <td>#7fffd4
+                <td>127,255,212
+            <tr>
+                <td style="background: azure;">&nbsp;
+                <td style="background: rgb(240, 255, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-azure" data-export="" data-dfn-type="value" data-dfn-for="<color>">azure<a class="self-link" href="#valdef-color-azure"></a></dfn>
+                <td>#f0ffff
+                <td>240,255,255
+            <tr>
+                <td style="background: beige;">&nbsp;
+                <td style="background: rgb(245, 245, 220);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-beige" data-export="" data-dfn-type="value" data-dfn-for="<color>">beige<a class="self-link" href="#valdef-color-beige"></a></dfn>
+                <td>#f5f5dc
+                <td>245,245,220
+            <tr>
+                <td style="background: bisque;">&nbsp;
+                <td style="background: rgb(255, 228, 196);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-bisque" data-export="" data-dfn-type="value" data-dfn-for="<color>">bisque<a class="self-link" href="#valdef-color-bisque"></a></dfn>
+                <td>#ffe4c4
+                <td>255,228,196
+            <tr>
+                <td style="background: black;">&nbsp;
+                <td style="background: rgb(0, 0, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-black" data-export="" data-dfn-type="value" data-dfn-for="<color>">black<a class="self-link" href="#valdef-color-black"></a></dfn>
+                <td>#000000
+                <td>0,0,0
+            <tr>
+                <td style="background: blanchedalmond;">&nbsp;
+                <td style="background: rgb(255, 235, 205);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-blanchedalmond" data-export="" data-dfn-type="value" data-dfn-for="<color>">blanchedalmond<a class="self-link" href="#valdef-color-blanchedalmond"></a></dfn>
+                <td>#ffebcd
+                <td>255,235,205
+            <tr>
+                <td style="background: blue;">&nbsp;
+                <td style="background: rgb(0, 0, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-blue" data-export="" data-dfn-type="value" data-dfn-for="<color>">blue<a class="self-link" href="#valdef-color-blue"></a></dfn>
+                <td>#0000ff
+                <td>0,0,255
+            <tr>
+                <td style="background: blueviolet;">&nbsp;
+                <td style="background: rgb(138, 43, 226);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-blueviolet" data-export="" data-dfn-type="value" data-dfn-for="<color>">blueviolet<a class="self-link" href="#valdef-color-blueviolet"></a></dfn>
+                <td>#8a2be2
+                <td>138,43,226
+            <tr>
+                <td style="background: brown;">&nbsp;
+                <td style="background: rgb(165, 42, 42);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-brown" data-export="" data-dfn-type="value" data-dfn-for="<color>">brown<a class="self-link" href="#valdef-color-brown"></a></dfn>
+                <td>#a52a2a
+                <td>165,42,42
+            <tr>
+                <td style="background: burlywood;">&nbsp;
+                <td style="background: rgb(222, 184, 135);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-burlywood" data-export="" data-dfn-type="value" data-dfn-for="<color>">burlywood<a class="self-link" href="#valdef-color-burlywood"></a></dfn>
+                <td>#deb887
+                <td>222,184,135
+            <tr>
+                <td style="background: cadetblue;">&nbsp;
+                <td style="background: rgb(95, 158, 160);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-cadetblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">cadetblue<a class="self-link" href="#valdef-color-cadetblue"></a></dfn>
+                <td>#5f9ea0
+                <td>95,158,160
+            <tr>
+                <td style="background: chartreuse;">&nbsp;
+                <td style="background: rgb(127, 255, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-chartreuse" data-export="" data-dfn-type="value" data-dfn-for="<color>">chartreuse<a class="self-link" href="#valdef-color-chartreuse"></a></dfn>
+                <td>#7fff00
+                <td>127,255,0
+            <tr>
+                <td style="background: chocolate;">&nbsp;
+                <td style="background: rgb(210, 105, 30);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-chocolate" data-export="" data-dfn-type="value" data-dfn-for="<color>">chocolate<a class="self-link" href="#valdef-color-chocolate"></a></dfn>
+                <td>#d2691e
+                <td>210,105,30
+            <tr>
+                <td style="background: coral;">&nbsp;
+                <td style="background: rgb(255, 127, 80);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-coral" data-export="" data-dfn-type="value" data-dfn-for="<color>">coral<a class="self-link" href="#valdef-color-coral"></a></dfn>
+                <td>#ff7f50
+                <td>255,127,80
+            <tr>
+                <td style="background: cornflowerblue;">&nbsp;
+                <td style="background: rgb(100, 149, 237);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-cornflowerblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">cornflowerblue<a class="self-link" href="#valdef-color-cornflowerblue"></a></dfn>
+                <td>#6495ed
+                <td>100,149,237
+            <tr>
+                <td style="background: cornsilk;">&nbsp;
+                <td style="background: rgb(255, 248, 220);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-cornsilk" data-export="" data-dfn-type="value" data-dfn-for="<color>">cornsilk<a class="self-link" href="#valdef-color-cornsilk"></a></dfn>
+                <td>#fff8dc
+                <td>255,248,220
+            <tr>
+                <td style="background: crimson;">&nbsp;
+                <td style="background: rgb(220, 20, 60);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-crimson" data-export="" data-dfn-type="value" data-dfn-for="<color>">crimson<a class="self-link" href="#valdef-color-crimson"></a></dfn>
+                <td>#dc143c
+                <td>220,20,60
+            <tr>
+                <td style="background: cyan;">&nbsp;
+                <td style="background: rgb(0, 255, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-cyan" data-export="" data-dfn-type="value" data-dfn-for="<color>">cyan<a class="self-link" href="#valdef-color-cyan"></a></dfn>
+                <td>#00ffff
+                <td>0,255,255
+            <tr>
+                <td style="background: darkblue;">&nbsp;
+                <td style="background: rgb(0, 0, 139);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkblue<a class="self-link" href="#valdef-color-darkblue"></a></dfn>
+                <td>#00008b
+                <td>0,0,139
+            <tr>
+                <td style="background: darkcyan;">&nbsp;
+                <td style="background: rgb(0, 139, 139);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkcyan" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkcyan<a class="self-link" href="#valdef-color-darkcyan"></a></dfn>
+                <td>#008b8b
+                <td>0,139,139
+            <tr>
+                <td style="background: darkgoldenrod;">&nbsp;
+                <td style="background: rgb(184, 134, 11);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkgoldenrod" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkgoldenrod<a class="self-link" href="#valdef-color-darkgoldenrod"></a></dfn>
+                <td>#b8860b
+                <td>184,134,11
+            <tr>
+                <td style="background: darkgray;">&nbsp;
+                <td style="background: rgb(169, 169, 169);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkgray" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkgray<a class="self-link" href="#valdef-color-darkgray"></a></dfn>
+                <td>#a9a9a9
+                <td>169,169,169
+            <tr>
+                <td style="background: darkgreen;">&nbsp;
+                <td style="background: rgb(0, 100, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkgreen<a class="self-link" href="#valdef-color-darkgreen"></a></dfn>
+                <td>#006400
+                <td>0,100,0
+            <tr>
+                <td style="background: darkgrey;">&nbsp;
+                <td style="background: rgb(169, 169, 169);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkgrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkgrey<a class="self-link" href="#valdef-color-darkgrey"></a></dfn>
+                <td>#a9a9a9
+                <td>169,169,169
+            <tr>
+                <td style="background: darkkhaki;">&nbsp;
+                <td style="background: rgb(189, 183, 107);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkkhaki" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkkhaki<a class="self-link" href="#valdef-color-darkkhaki"></a></dfn>
+                <td>#bdb76b
+                <td>189,183,107
+            <tr>
+                <td style="background: darkmagenta;">&nbsp;
+                <td style="background: rgb(139, 0, 139);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkmagenta" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkmagenta<a class="self-link" href="#valdef-color-darkmagenta"></a></dfn>
+                <td>#8b008b
+                <td>139,0,139
+            <tr>
+                <td style="background: darkolivegreen;">&nbsp;
+                <td style="background: rgb(85, 107, 47);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkolivegreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkolivegreen<a class="self-link" href="#valdef-color-darkolivegreen"></a></dfn>
+                <td>#556b2f
+                <td>85,107,47
+            <tr>
+                <td style="background: darkorange;">&nbsp;
+                <td style="background: rgb(255, 140, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkorange" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkorange<a class="self-link" href="#valdef-color-darkorange"></a></dfn>
+                <td>#ff8c00
+                <td>255,140,0
+            <tr>
+                <td style="background: darkorchid;">&nbsp;
+                <td style="background: rgb(153, 50, 204);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkorchid" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkorchid<a class="self-link" href="#valdef-color-darkorchid"></a></dfn>
+                <td>#9932cc
+                <td>153,50,204
+            <tr>
+                <td style="background: darkred;">&nbsp;
+                <td style="background: rgb(139, 0, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkred" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkred<a class="self-link" href="#valdef-color-darkred"></a></dfn>
+                <td>#8b0000
+                <td>139,0,0
+            <tr>
+                <td style="background: darksalmon;">&nbsp;
+                <td style="background: rgb(233, 150, 122);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darksalmon" data-export="" data-dfn-type="value" data-dfn-for="<color>">darksalmon<a class="self-link" href="#valdef-color-darksalmon"></a></dfn>
+                <td>#e9967a
+                <td>233,150,122
+            <tr>
+                <td style="background: darkseagreen;">&nbsp;
+                <td style="background: rgb(143, 188, 143);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkseagreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkseagreen<a class="self-link" href="#valdef-color-darkseagreen"></a></dfn>
+                <td>#8fbc8f
+                <td>143,188,143
+            <tr>
+                <td style="background: darkslateblue;">&nbsp;
+                <td style="background: rgb(72, 61, 139);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkslateblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkslateblue<a class="self-link" href="#valdef-color-darkslateblue"></a></dfn>
+                <td>#483d8b
+                <td>72,61,139
+            <tr>
+                <td style="background: darkslategray;">&nbsp;
+                <td style="background: rgb(47, 79, 79);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkslategray" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkslategray<a class="self-link" href="#valdef-color-darkslategray"></a></dfn>
+                <td>#2f4f4f
+                <td>47,79,79
+            <tr>
+                <td style="background: darkslategrey;">&nbsp;
+                <td style="background: rgb(47, 79, 79);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkslategrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkslategrey<a class="self-link" href="#valdef-color-darkslategrey"></a></dfn>
+                <td>#2f4f4f
+                <td>47,79,79
+            <tr>
+                <td style="background: darkturquoise;">&nbsp;
+                <td style="background: rgb(0, 206, 209);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkturquoise" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkturquoise<a class="self-link" href="#valdef-color-darkturquoise"></a></dfn>
+                <td>#00ced1
+                <td>0,206,209
+            <tr>
+                <td style="background: darkviolet;">&nbsp;
+                <td style="background: rgb(148, 0, 211);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-darkviolet" data-export="" data-dfn-type="value" data-dfn-for="<color>">darkviolet<a class="self-link" href="#valdef-color-darkviolet"></a></dfn>
+                <td>#9400d3
+                <td>148,0,211
+            <tr>
+                <td style="background: deeppink;">&nbsp;
+                <td style="background: rgb(255, 20, 147);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-deeppink" data-export="" data-dfn-type="value" data-dfn-for="<color>">deeppink<a class="self-link" href="#valdef-color-deeppink"></a></dfn>
+                <td>#ff1493
+                <td>255,20,147
+            <tr>
+                <td style="background: deepskyblue;">&nbsp;
+                <td style="background: rgb(0, 191, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-deepskyblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">deepskyblue<a class="self-link" href="#valdef-color-deepskyblue"></a></dfn>
+                <td>#00bfff
+                <td>0,191,255
+            <tr>
+                <td style="background: dimgray;">&nbsp;
+                <td style="background: rgb(105, 105, 105);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-dimgray" data-export="" data-dfn-type="value" data-dfn-for="<color>">dimgray<a class="self-link" href="#valdef-color-dimgray"></a></dfn>
+                <td>#696969
+                <td>105,105,105
+            <tr>
+                <td style="background: dimgrey;">&nbsp;
+                <td style="background: rgb(105, 105, 105);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-dimgrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">dimgrey<a class="self-link" href="#valdef-color-dimgrey"></a></dfn>
+                <td>#696969
+                <td>105,105,105
+            <tr>
+                <td style="background: dodgerblue;">&nbsp;
+                <td style="background: rgb(30, 144, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-dodgerblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">dodgerblue<a class="self-link" href="#valdef-color-dodgerblue"></a></dfn>
+                <td>#1e90ff
+                <td>30,144,255
+            <tr>
+                <td style="background: firebrick;">&nbsp;
+                <td style="background: rgb(178, 34, 34);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-firebrick" data-export="" data-dfn-type="value" data-dfn-for="<color>">firebrick<a class="self-link" href="#valdef-color-firebrick"></a></dfn>
+                <td>#b22222
+                <td>178,34,34
+            <tr>
+                <td style="background: floralwhite;">&nbsp;
+                <td style="background: rgb(255, 250, 240);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-floralwhite" data-export="" data-dfn-type="value" data-dfn-for="<color>">floralwhite<a class="self-link" href="#valdef-color-floralwhite"></a></dfn>
+                <td>#fffaf0
+                <td>255,250,240
+            <tr>
+                <td style="background: forestgreen;">&nbsp;
+                <td style="background: rgb(34, 139, 34);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-forestgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">forestgreen<a class="self-link" href="#valdef-color-forestgreen"></a></dfn>
+                <td>#228b22
+                <td>34,139,34
+            <tr>
+                <td style="background: fuchsia;">&nbsp;
+                <td style="background: rgb(255, 0, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-fuchsia" data-export="" data-dfn-type="value" data-dfn-for="<color>">fuchsia<a class="self-link" href="#valdef-color-fuchsia"></a></dfn>
+                <td>#ff00ff
+                <td>255,0,255
+            <tr>
+                <td style="background: gainsboro;">&nbsp;
+                <td style="background: rgb(220, 220, 220);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-gainsboro" data-export="" data-dfn-type="value" data-dfn-for="<color>">gainsboro<a class="self-link" href="#valdef-color-gainsboro"></a></dfn>
+                <td>#dcdcdc
+                <td>220,220,220
+            <tr>
+                <td style="background: ghostwhite;">&nbsp;
+                <td style="background: rgb(248, 248, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-ghostwhite" data-export="" data-dfn-type="value" data-dfn-for="<color>">ghostwhite<a class="self-link" href="#valdef-color-ghostwhite"></a></dfn>
+                <td>#f8f8ff
+                <td>248,248,255
+            <tr>
+                <td style="background: gold;">&nbsp;
+                <td style="background: rgb(255, 215, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-gold" data-export="" data-dfn-type="value" data-dfn-for="<color>">gold<a class="self-link" href="#valdef-color-gold"></a></dfn>
+                <td>#ffd700
+                <td>255,215,0
+            <tr>
+                <td style="background: goldenrod;">&nbsp;
+                <td style="background: rgb(218, 165, 32);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-goldenrod" data-export="" data-dfn-type="value" data-dfn-for="<color>">goldenrod<a class="self-link" href="#valdef-color-goldenrod"></a></dfn>
+                <td>#daa520
+                <td>218,165,32
+            <tr>
+                <td style="background: gray;">&nbsp;
+                <td style="background: rgb(128, 128, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-gray" data-export="" data-dfn-type="value" data-dfn-for="<color>">gray<a class="self-link" href="#valdef-color-gray"></a></dfn>
+                <td>#808080
+                <td>128,128,128
+            <tr>
+                <td style="background: green;">&nbsp;
+                <td style="background: rgb(0, 128, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-green" data-export="" data-dfn-type="value" data-dfn-for="<color>">green<a class="self-link" href="#valdef-color-green"></a></dfn>
+                <td>#008000
+                <td>0,128,0
+            <tr>
+                <td style="background: greenyellow;">&nbsp;
+                <td style="background: rgb(173, 255, 47);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-greenyellow" data-export="" data-dfn-type="value" data-dfn-for="<color>">greenyellow<a class="self-link" href="#valdef-color-greenyellow"></a></dfn>
+                <td>#adff2f
+                <td>173,255,47
+            <tr>
+                <td style="background: grey;">&nbsp;
+                <td style="background: rgb(128, 128, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-grey" data-export="" data-dfn-type="value" data-dfn-for="<color>">grey<a class="self-link" href="#valdef-color-grey"></a></dfn>
+                <td>#808080
+                <td>128,128,128
+            <tr>
+                <td style="background: honeydew;">&nbsp;
+                <td style="background: rgb(240, 255, 240);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-honeydew" data-export="" data-dfn-type="value" data-dfn-for="<color>">honeydew<a class="self-link" href="#valdef-color-honeydew"></a></dfn>
+                <td>#f0fff0
+                <td>240,255,240
+            <tr>
+                <td style="background: hotpink;">&nbsp;
+                <td style="background: rgb(255, 105, 180);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-hotpink" data-export="" data-dfn-type="value" data-dfn-for="<color>">hotpink<a class="self-link" href="#valdef-color-hotpink"></a></dfn>
+                <td>#ff69b4
+                <td>255,105,180
+            <tr>
+                <td style="background: indianred;">&nbsp;
+                <td style="background: rgb(205, 92, 92);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-indianred" data-export="" data-dfn-type="value" data-dfn-for="<color>">indianred<a class="self-link" href="#valdef-color-indianred"></a></dfn>
+                <td>#cd5c5c
+                <td>205,92,92
+            <tr>
+                <td style="background: indigo;">&nbsp;
+                <td style="background: rgb(75, 0, 130);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-indigo" data-export="" data-dfn-type="value" data-dfn-for="<color>">indigo<a class="self-link" href="#valdef-color-indigo"></a></dfn>
+                <td>#4b0082
+                <td>75,0,130
+            <tr>
+                <td style="background: ivory;">&nbsp;
+                <td style="background: rgb(255, 255, 240);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-ivory" data-export="" data-dfn-type="value" data-dfn-for="<color>">ivory<a class="self-link" href="#valdef-color-ivory"></a></dfn>
+                <td>#fffff0
+                <td>255,255,240
+            <tr>
+                <td style="background: khaki;">&nbsp;
+                <td style="background: rgb(240, 230, 140);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-khaki" data-export="" data-dfn-type="value" data-dfn-for="<color>">khaki<a class="self-link" href="#valdef-color-khaki"></a></dfn>
+                <td>#f0e68c
+                <td>240,230,140
+            <tr>
+                <td style="background: lavender;">&nbsp;
+                <td style="background: rgb(230, 230, 250);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lavender" data-export="" data-dfn-type="value" data-dfn-for="<color>">lavender<a class="self-link" href="#valdef-color-lavender"></a></dfn>
+                <td>#e6e6fa
+                <td>230,230,250
+            <tr>
+                <td style="background: lavenderblush;">&nbsp;
+                <td style="background: rgb(255, 240, 245);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lavenderblush" data-export="" data-dfn-type="value" data-dfn-for="<color>">lavenderblush<a class="self-link" href="#valdef-color-lavenderblush"></a></dfn>
+                <td>#fff0f5
+                <td>255,240,245
+            <tr>
+                <td style="background: lawngreen;">&nbsp;
+                <td style="background: rgb(124, 252, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lawngreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">lawngreen<a class="self-link" href="#valdef-color-lawngreen"></a></dfn>
+                <td>#7cfc00
+                <td>124,252,0
+            <tr>
+                <td style="background: lemonchiffon;">&nbsp;
+                <td style="background: rgb(255, 250, 205);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lemonchiffon" data-export="" data-dfn-type="value" data-dfn-for="<color>">lemonchiffon<a class="self-link" href="#valdef-color-lemonchiffon"></a></dfn>
+                <td>#fffacd
+                <td>255,250,205
+            <tr>
+                <td style="background: lightblue;">&nbsp;
+                <td style="background: rgb(173, 216, 230);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightblue<a class="self-link" href="#valdef-color-lightblue"></a></dfn>
+                <td>#add8e6
+                <td>173,216,230
+            <tr>
+                <td style="background: lightcoral;">&nbsp;
+                <td style="background: rgb(240, 128, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightcoral" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightcoral<a class="self-link" href="#valdef-color-lightcoral"></a></dfn>
+                <td>#f08080
+                <td>240,128,128
+            <tr>
+                <td style="background: lightcyan;">&nbsp;
+                <td style="background: rgb(224, 255, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightcyan" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightcyan<a class="self-link" href="#valdef-color-lightcyan"></a></dfn>
+                <td>#e0ffff
+                <td>224,255,255
+            <tr>
+                <td style="background: lightgoldenrodyellow;">&nbsp;
+                <td style="background: rgb(250, 250, 210);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightgoldenrodyellow" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightgoldenrodyellow<a class="self-link" href="#valdef-color-lightgoldenrodyellow"></a></dfn>
+                <td>#fafad2
+                <td>250,250,210
+            <tr>
+                <td style="background: lightgray;">&nbsp;
+                <td style="background: rgb(211, 211, 211);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightgray" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightgray<a class="self-link" href="#valdef-color-lightgray"></a></dfn>
+                <td>#d3d3d3
+                <td>211,211,211
+            <tr>
+                <td style="background: lightgreen;">&nbsp;
+                <td style="background: rgb(144, 238, 144);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightgreen<a class="self-link" href="#valdef-color-lightgreen"></a></dfn>
+                <td>#90ee90
+                <td>144,238,144
+            <tr>
+                <td style="background: lightgrey;">&nbsp;
+                <td style="background: rgb(211, 211, 211);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightgrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightgrey<a class="self-link" href="#valdef-color-lightgrey"></a></dfn>
+                <td>#d3d3d3
+                <td>211,211,211
+            <tr>
+                <td style="background: lightpink;">&nbsp;
+                <td style="background: rgb(255, 182, 193);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightpink" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightpink<a class="self-link" href="#valdef-color-lightpink"></a></dfn>
+                <td>#ffb6c1
+                <td>255,182,193
+            <tr>
+                <td style="background: lightsalmon;">&nbsp;
+                <td style="background: rgb(255, 160, 122);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightsalmon" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightsalmon<a class="self-link" href="#valdef-color-lightsalmon"></a></dfn>
+                <td>#ffa07a
+                <td>255,160,122
+            <tr>
+                <td style="background: lightseagreen;">&nbsp;
+                <td style="background: rgb(32, 178, 170);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightseagreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightseagreen<a class="self-link" href="#valdef-color-lightseagreen"></a></dfn>
+                <td>#20b2aa
+                <td>32,178,170
+            <tr>
+                <td style="background: lightskyblue;">&nbsp;
+                <td style="background: rgb(135, 206, 250);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightskyblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightskyblue<a class="self-link" href="#valdef-color-lightskyblue"></a></dfn>
+                <td>#87cefa
+                <td>135,206,250
+            <tr>
+                <td style="background: lightslategray;">&nbsp;
+                <td style="background: rgb(119, 136, 153);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightslategray" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightslategray<a class="self-link" href="#valdef-color-lightslategray"></a></dfn>
+                <td>#778899
+                <td>119,136,153
+            <tr>
+                <td style="background: lightslategrey;">&nbsp;
+                <td style="background: rgb(119, 136, 153);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightslategrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightslategrey<a class="self-link" href="#valdef-color-lightslategrey"></a></dfn>
+                <td>#778899
+                <td>119,136,153
+            <tr>
+                <td style="background: lightsteelblue;">&nbsp;
+                <td style="background: rgb(176, 196, 222);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightsteelblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightsteelblue<a class="self-link" href="#valdef-color-lightsteelblue"></a></dfn>
+                <td>#b0c4de
+                <td>176,196,222
+            <tr>
+                <td style="background: lightyellow;">&nbsp;
+                <td style="background: rgb(255, 255, 224);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lightyellow" data-export="" data-dfn-type="value" data-dfn-for="<color>">lightyellow<a class="self-link" href="#valdef-color-lightyellow"></a></dfn>
+                <td>#ffffe0
+                <td>255,255,224
+            <tr>
+                <td style="background: lime;">&nbsp;
+                <td style="background: rgb(0, 255, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-lime" data-export="" data-dfn-type="value" data-dfn-for="<color>">lime<a class="self-link" href="#valdef-color-lime"></a></dfn>
+                <td>#00ff00
+                <td>0,255,0
+            <tr>
+                <td style="background: limegreen;">&nbsp;
+                <td style="background: rgb(50, 205, 50);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-limegreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">limegreen<a class="self-link" href="#valdef-color-limegreen"></a></dfn>
+                <td>#32cd32
+                <td>50,205,50
+            <tr>
+                <td style="background: linen;">&nbsp;
+                <td style="background: rgb(250, 240, 230);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-linen" data-export="" data-dfn-type="value" data-dfn-for="<color>">linen<a class="self-link" href="#valdef-color-linen"></a></dfn>
+                <td>#faf0e6
+                <td>250,240,230
+            <tr>
+                <td style="background: magenta;">&nbsp;
+                <td style="background: rgb(255, 0, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-magenta" data-export="" data-dfn-type="value" data-dfn-for="<color>">magenta<a class="self-link" href="#valdef-color-magenta"></a></dfn>
+                <td>#ff00ff
+                <td>255,0,255
+            <tr>
+                <td style="background: maroon;">&nbsp;
+                <td style="background: rgb(128, 0, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-maroon" data-export="" data-dfn-type="value" data-dfn-for="<color>">maroon<a class="self-link" href="#valdef-color-maroon"></a></dfn>
+                <td>#800000
+                <td>128,0,0
+            <tr>
+                <td style="background: mediumaquamarine;">&nbsp;
+                <td style="background: rgb(102, 205, 170);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumaquamarine" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumaquamarine<a class="self-link" href="#valdef-color-mediumaquamarine"></a></dfn>
+                <td>#66cdaa
+                <td>102,205,170
+            <tr>
+                <td style="background: mediumblue;">&nbsp;
+                <td style="background: rgb(0, 0, 205);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumblue<a class="self-link" href="#valdef-color-mediumblue"></a></dfn>
+                <td>#0000cd
+                <td>0,0,205
+            <tr>
+                <td style="background: mediumorchid;">&nbsp;
+                <td style="background: rgb(186, 85, 211);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumorchid" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumorchid<a class="self-link" href="#valdef-color-mediumorchid"></a></dfn>
+                <td>#ba55d3
+                <td>186,85,211
+            <tr>
+                <td style="background: mediumpurple;">&nbsp;
+                <td style="background: rgb(147, 112, 219);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumpurple" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumpurple<a class="self-link" href="#valdef-color-mediumpurple"></a></dfn>
+                <td>#9370db
+                <td>147,112,219
+            <tr>
+                <td style="background: mediumseagreen;">&nbsp;
+                <td style="background: rgb(60, 179, 113);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumseagreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumseagreen<a class="self-link" href="#valdef-color-mediumseagreen"></a></dfn>
+                <td>#3cb371
+                <td>60,179,113
+            <tr>
+                <td style="background: mediumslateblue;">&nbsp;
+                <td style="background: rgb(123, 104, 238);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumslateblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumslateblue<a class="self-link" href="#valdef-color-mediumslateblue"></a></dfn>
+                <td>#7b68ee
+                <td>123,104,238
+            <tr>
+                <td style="background: mediumspringgreen;">&nbsp;
+                <td style="background: rgb(0, 250, 154);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumspringgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumspringgreen<a class="self-link" href="#valdef-color-mediumspringgreen"></a></dfn>
+                <td>#00fa9a
+                <td>0,250,154
+            <tr>
+                <td style="background: mediumturquoise;">&nbsp;
+                <td style="background: rgb(72, 209, 204);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumturquoise" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumturquoise<a class="self-link" href="#valdef-color-mediumturquoise"></a></dfn>
+                <td>#48d1cc
+                <td>72,209,204
+            <tr>
+                <td style="background: mediumvioletred;">&nbsp;
+                <td style="background: rgb(199, 21, 133);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mediumvioletred" data-export="" data-dfn-type="value" data-dfn-for="<color>">mediumvioletred<a class="self-link" href="#valdef-color-mediumvioletred"></a></dfn>
+                <td>#c71585
+                <td>199,21,133
+            <tr>
+                <td style="background: midnightblue;">&nbsp;
+                <td style="background: rgb(25, 25, 112);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-midnightblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">midnightblue<a class="self-link" href="#valdef-color-midnightblue"></a></dfn>
+                <td>#191970
+                <td>25,25,112
+            <tr>
+                <td style="background: mintcream;">&nbsp;
+                <td style="background: rgb(245, 255, 250);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mintcream" data-export="" data-dfn-type="value" data-dfn-for="<color>">mintcream<a class="self-link" href="#valdef-color-mintcream"></a></dfn>
+                <td>#f5fffa
+                <td>245,255,250
+            <tr>
+                <td style="background: mistyrose;">&nbsp;
+                <td style="background: rgb(255, 228, 225);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-mistyrose" data-export="" data-dfn-type="value" data-dfn-for="<color>">mistyrose<a class="self-link" href="#valdef-color-mistyrose"></a></dfn>
+                <td>#ffe4e1
+                <td>255,228,225
+            <tr>
+                <td style="background: moccasin;">&nbsp;
+                <td style="background: rgb(255, 228, 181);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-moccasin" data-export="" data-dfn-type="value" data-dfn-for="<color>">moccasin<a class="self-link" href="#valdef-color-moccasin"></a></dfn>
+                <td>#ffe4b5
+                <td>255,228,181
+            <tr>
+                <td style="background: navajowhite;">&nbsp;
+                <td style="background: rgb(255, 222, 173);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-navajowhite" data-export="" data-dfn-type="value" data-dfn-for="<color>">navajowhite<a class="self-link" href="#valdef-color-navajowhite"></a></dfn>
+                <td>#ffdead
+                <td>255,222,173
+            <tr>
+                <td style="background: navy;">&nbsp;
+                <td style="background: rgb(0, 0, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-navy" data-export="" data-dfn-type="value" data-dfn-for="<color>">navy<a class="self-link" href="#valdef-color-navy"></a></dfn>
+                <td>#000080
+                <td>0,0,128
+            <tr>
+                <td style="background: oldlace;">&nbsp;
+                <td style="background: rgb(253, 245, 230);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-oldlace" data-export="" data-dfn-type="value" data-dfn-for="<color>">oldlace<a class="self-link" href="#valdef-color-oldlace"></a></dfn>
+                <td>#fdf5e6
+                <td>253,245,230
+            <tr>
+                <td style="background: olive;">&nbsp;
+                <td style="background: rgb(128, 128, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-olive" data-export="" data-dfn-type="value" data-dfn-for="<color>">olive<a class="self-link" href="#valdef-color-olive"></a></dfn>
+                <td>#808000
+                <td>128,128,0
+            <tr>
+                <td style="background: olivedrab;">&nbsp;
+                <td style="background: rgb(107, 142, 35);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-olivedrab" data-export="" data-dfn-type="value" data-dfn-for="<color>">olivedrab<a class="self-link" href="#valdef-color-olivedrab"></a></dfn>
+                <td>#6b8e23
+                <td>107,142,35
+            <tr>
+                <td style="background: orange;">&nbsp;
+                <td style="background: rgb(255, 165, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-orange" data-export="" data-dfn-type="value" data-dfn-for="<color>">orange<a class="self-link" href="#valdef-color-orange"></a></dfn>
+                <td>#ffa500
+                <td>255,165,0
+            <tr>
+                <td style="background: orangered;">&nbsp;
+                <td style="background: rgb(255, 69, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-orangered" data-export="" data-dfn-type="value" data-dfn-for="<color>">orangered<a class="self-link" href="#valdef-color-orangered"></a></dfn>
+                <td>#ff4500
+                <td>255,69,0
+            <tr>
+                <td style="background: orchid;">&nbsp;
+                <td style="background: rgb(218, 112, 214);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-orchid" data-export="" data-dfn-type="value" data-dfn-for="<color>">orchid<a class="self-link" href="#valdef-color-orchid"></a></dfn>
+                <td>#da70d6
+                <td>218,112,214
+            <tr>
+                <td style="background: palegoldenrod;">&nbsp;
+                <td style="background: rgb(238, 232, 170);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-palegoldenrod" data-export="" data-dfn-type="value" data-dfn-for="<color>">palegoldenrod<a class="self-link" href="#valdef-color-palegoldenrod"></a></dfn>
+                <td>#eee8aa
+                <td>238,232,170
+            <tr>
+                <td style="background: palegreen;">&nbsp;
+                <td style="background: rgb(152, 251, 152);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-palegreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">palegreen<a class="self-link" href="#valdef-color-palegreen"></a></dfn>
+                <td>#98fb98
+                <td>152,251,152
+            <tr>
+                <td style="background: paleturquoise;">&nbsp;
+                <td style="background: rgb(175, 238, 238);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-paleturquoise" data-export="" data-dfn-type="value" data-dfn-for="<color>">paleturquoise<a class="self-link" href="#valdef-color-paleturquoise"></a></dfn>
+                <td>#afeeee
+                <td>175,238,238
+            <tr>
+                <td style="background: palevioletred;">&nbsp;
+                <td style="background: rgb(219, 112, 147);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-palevioletred" data-export="" data-dfn-type="value" data-dfn-for="<color>">palevioletred<a class="self-link" href="#valdef-color-palevioletred"></a></dfn>
+                <td>#db7093
+                <td>219,112,147
+            <tr>
+                <td style="background: papayawhip;">&nbsp;
+                <td style="background: rgb(255, 239, 213);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-papayawhip" data-export="" data-dfn-type="value" data-dfn-for="<color>">papayawhip<a class="self-link" href="#valdef-color-papayawhip"></a></dfn>
+                <td>#ffefd5
+                <td>255,239,213
+            <tr>
+                <td style="background: peachpuff;">&nbsp;
+                <td style="background: rgb(255, 218, 185);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-peachpuff" data-export="" data-dfn-type="value" data-dfn-for="<color>">peachpuff<a class="self-link" href="#valdef-color-peachpuff"></a></dfn>
+                <td>#ffdab9
+                <td>255,218,185
+            <tr>
+                <td style="background: peru;">&nbsp;
+                <td style="background: rgb(205, 133, 63);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-peru" data-export="" data-dfn-type="value" data-dfn-for="<color>">peru<a class="self-link" href="#valdef-color-peru"></a></dfn>
+                <td>#cd853f
+                <td>205,133,63
+            <tr>
+                <td style="background: pink;">&nbsp;
+                <td style="background: rgb(255, 192, 203);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-pink" data-export="" data-dfn-type="value" data-dfn-for="<color>">pink<a class="self-link" href="#valdef-color-pink"></a></dfn>
+                <td>#ffc0cb
+                <td>255,192,203
+            <tr>
+                <td style="background: plum;">&nbsp;
+                <td style="background: rgb(221, 160, 221);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-plum" data-export="" data-dfn-type="value" data-dfn-for="<color>">plum<a class="self-link" href="#valdef-color-plum"></a></dfn>
+                <td>#dda0dd
+                <td>221,160,221
+            <tr>
+                <td style="background: powderblue;">&nbsp;
+                <td style="background: rgb(176, 224, 230);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-powderblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">powderblue<a class="self-link" href="#valdef-color-powderblue"></a></dfn>
+                <td>#b0e0e6
+                <td>176,224,230
+            <tr>
+                <td style="background: purple;">&nbsp;
+                <td style="background: rgb(128, 0, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-purple" data-export="" data-dfn-type="value" data-dfn-for="<color>">purple<a class="self-link" href="#valdef-color-purple"></a></dfn>
+                <td>#800080
+                <td>128,0,128
+            <tr>
+                <td style="background: rebeccapurple;">&nbsp;
+                <td style="background: rgb(102, 51, 153);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-rebeccapurple" data-export="" data-dfn-type="value" data-dfn-for="<color>">rebeccapurple<a class="self-link" href="#valdef-color-rebeccapurple"></a></dfn>
+                <td>#663399
+                <td>102,51,153
+            <tr>
+                <td style="background: red;">&nbsp;
+                <td style="background: rgb(255, 0, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-red" data-export="" data-dfn-type="value" data-dfn-for="<color>">red<a class="self-link" href="#valdef-color-red"></a></dfn>
+                <td>#ff0000
+                <td>255,0,0
+            <tr>
+                <td style="background: rosybrown;">&nbsp;
+                <td style="background: rgb(188, 143, 143);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-rosybrown" data-export="" data-dfn-type="value" data-dfn-for="<color>">rosybrown<a class="self-link" href="#valdef-color-rosybrown"></a></dfn>
+                <td>#bc8f8f
+                <td>188,143,143
+            <tr>
+                <td style="background: royalblue;">&nbsp;
+                <td style="background: rgb(65, 105, 225);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-royalblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">royalblue<a class="self-link" href="#valdef-color-royalblue"></a></dfn>
+                <td>#4169e1
+                <td>65,105,225
+            <tr>
+                <td style="background: saddlebrown;">&nbsp;
+                <td style="background: rgb(139, 69, 19);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-saddlebrown" data-export="" data-dfn-type="value" data-dfn-for="<color>">saddlebrown<a class="self-link" href="#valdef-color-saddlebrown"></a></dfn>
+                <td>#8b4513
+                <td>139,69,19
+            <tr>
+                <td style="background: salmon;">&nbsp;
+                <td style="background: rgb(250, 128, 114);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-salmon" data-export="" data-dfn-type="value" data-dfn-for="<color>">salmon<a class="self-link" href="#valdef-color-salmon"></a></dfn>
+                <td>#fa8072
+                <td>250,128,114
+            <tr>
+                <td style="background: sandybrown;">&nbsp;
+                <td style="background: rgb(244, 164, 96);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-sandybrown" data-export="" data-dfn-type="value" data-dfn-for="<color>">sandybrown<a class="self-link" href="#valdef-color-sandybrown"></a></dfn>
+                <td>#f4a460
+                <td>244,164,96
+            <tr>
+                <td style="background: seagreen;">&nbsp;
+                <td style="background: rgb(46, 139, 87);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-seagreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">seagreen<a class="self-link" href="#valdef-color-seagreen"></a></dfn>
+                <td>#2e8b57
+                <td>46,139,87
+            <tr>
+                <td style="background: seashell;">&nbsp;
+                <td style="background: rgb(255, 245, 238);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-seashell" data-export="" data-dfn-type="value" data-dfn-for="<color>">seashell<a class="self-link" href="#valdef-color-seashell"></a></dfn>
+                <td>#fff5ee
+                <td>255,245,238
+            <tr>
+                <td style="background: sienna;">&nbsp;
+                <td style="background: rgb(160, 82, 45);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-sienna" data-export="" data-dfn-type="value" data-dfn-for="<color>">sienna<a class="self-link" href="#valdef-color-sienna"></a></dfn>
+                <td>#a0522d
+                <td>160,82,45
+            <tr>
+                <td style="background: silver;">&nbsp;
+                <td style="background: rgb(192, 192, 192);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-silver" data-export="" data-dfn-type="value" data-dfn-for="<color>">silver<a class="self-link" href="#valdef-color-silver"></a></dfn>
+                <td>#c0c0c0
+                <td>192,192,192
+            <tr>
+                <td style="background: skyblue;">&nbsp;
+                <td style="background: rgb(135, 206, 235);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-skyblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">skyblue<a class="self-link" href="#valdef-color-skyblue"></a></dfn>
+                <td>#87ceeb
+                <td>135,206,235
+            <tr>
+                <td style="background: slateblue;">&nbsp;
+                <td style="background: rgb(106, 90, 205);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-slateblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">slateblue<a class="self-link" href="#valdef-color-slateblue"></a></dfn>
+                <td>#6a5acd
+                <td>106,90,205
+            <tr>
+                <td style="background: slategray;">&nbsp;
+                <td style="background: rgb(112, 128, 144);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-slategray" data-export="" data-dfn-type="value" data-dfn-for="<color>">slategray<a class="self-link" href="#valdef-color-slategray"></a></dfn>
+                <td>#708090
+                <td>112,128,144
+            <tr>
+                <td style="background: slategrey;">&nbsp;
+                <td style="background: rgb(112, 128, 144);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-slategrey" data-export="" data-dfn-type="value" data-dfn-for="<color>">slategrey<a class="self-link" href="#valdef-color-slategrey"></a></dfn>
+                <td>#708090
+                <td>112,128,144
+            <tr>
+                <td style="background: snow;">&nbsp;
+                <td style="background: rgb(255, 250, 250);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-snow" data-export="" data-dfn-type="value" data-dfn-for="<color>">snow<a class="self-link" href="#valdef-color-snow"></a></dfn>
+                <td>#fffafa
+                <td>255,250,250
+            <tr>
+                <td style="background: springgreen;">&nbsp;
+                <td style="background: rgb(0, 255, 127);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-springgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">springgreen<a class="self-link" href="#valdef-color-springgreen"></a></dfn>
+                <td>#00ff7f
+                <td>0,255,127
+            <tr>
+                <td style="background: steelblue;">&nbsp;
+                <td style="background: rgb(70, 130, 180);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-steelblue" data-export="" data-dfn-type="value" data-dfn-for="<color>">steelblue<a class="self-link" href="#valdef-color-steelblue"></a></dfn>
+                <td>#4682b4
+                <td>70,130,180
+            <tr>
+                <td style="background: tan;">&nbsp;
+                <td style="background: rgb(210, 180, 140);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-tan" data-export="" data-dfn-type="value" data-dfn-for="<color>">tan<a class="self-link" href="#valdef-color-tan"></a></dfn>
+                <td>#d2b48c
+                <td>210,180,140
+            <tr>
+                <td style="background: teal;">&nbsp;
+                <td style="background: rgb(0, 128, 128);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-teal" data-export="" data-dfn-type="value" data-dfn-for="<color>">teal<a class="self-link" href="#valdef-color-teal"></a></dfn>
+                <td>#008080
+                <td>0,128,128
+            <tr>
+                <td style="background: thistle;">&nbsp;
+                <td style="background: rgb(216, 191, 216);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-thistle" data-export="" data-dfn-type="value" data-dfn-for="<color>">thistle<a class="self-link" href="#valdef-color-thistle"></a></dfn>
+                <td>#d8bfd8
+                <td>216,191,216
+            <tr>
+                <td style="background: tomato;">&nbsp;
+                <td style="background: rgb(255, 99, 71);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-tomato" data-export="" data-dfn-type="value" data-dfn-for="<color>">tomato<a class="self-link" href="#valdef-color-tomato"></a></dfn>
+                <td>#ff6347
+                <td>255,99,71
+            <tr>
+                <td style="background: turquoise;">&nbsp;
+                <td style="background: rgb(64, 224, 208);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-turquoise" data-export="" data-dfn-type="value" data-dfn-for="<color>">turquoise<a class="self-link" href="#valdef-color-turquoise"></a></dfn>
+                <td>#40e0d0
+                <td>64,224,208
+            <tr>
+                <td style="background: violet;">&nbsp;
+                <td style="background: rgb(238, 130, 238);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-violet" data-export="" data-dfn-type="value" data-dfn-for="<color>">violet<a class="self-link" href="#valdef-color-violet"></a></dfn>
+                <td>#ee82ee
+                <td>238,130,238
+            <tr>
+                <td style="background: wheat;">&nbsp;
+                <td style="background: rgb(245, 222, 179);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-wheat" data-export="" data-dfn-type="value" data-dfn-for="<color>">wheat<a class="self-link" href="#valdef-color-wheat"></a></dfn>
+                <td>#f5deb3
+                <td>245,222,179
+            <tr>
+                <td style="background: white;">&nbsp;
+                <td style="background: rgb(255, 255, 255);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-white" data-export="" data-dfn-type="value" data-dfn-for="<color>">white<a class="self-link" href="#valdef-color-white"></a></dfn>
+                <td>#ffffff
+                <td>255,255,255
+            <tr>
+                <td style="background: whitesmoke;">&nbsp;
+                <td style="background: rgb(245, 245, 245);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-whitesmoke" data-export="" data-dfn-type="value" data-dfn-for="<color>">whitesmoke<a class="self-link" href="#valdef-color-whitesmoke"></a></dfn>
+                <td>#f5f5f5
+                <td>245,245,245
+            <tr>
+                <td style="background: yellow;">&nbsp;
+                <td style="background: rgb(255, 255, 0);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-yellow" data-export="" data-dfn-type="value" data-dfn-for="<color>">yellow<a class="self-link" href="#valdef-color-yellow"></a></dfn>
+                <td>#ffff00
+                <td>255,255,0
+            <tr>
+                <td style="background: yellowgreen;">&nbsp;
+                <td style="background: rgb(154, 205, 50);">&nbsp;
+                <th scope="row"><dfn class="css" id="valdef-color-yellowgreen" data-export="" data-dfn-type="value" data-dfn-for="<color>">yellowgreen<a class="self-link" href="#valdef-color-yellowgreen"></a></dfn>
+                <td>#9acd32
+                <td>154,205,50
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

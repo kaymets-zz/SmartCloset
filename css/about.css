@@ -1,0 +1,32 @@
+﻿.jumbotron#about {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+#btn-getStarted {
+    background-color: #009999;
+}
+
+.closet-info {
+    background-color: darkgray;
+    color: white;
+    padding: 30px;
+}
+
+.closet-scenario {
+    background-color: #009999;
+    padding: 15px;
+    margin: 5px;
+    -webkit-box-shadow: 1px 3px 10px black;
+            box-shadow: 1px 3px 10px black;
+}
+
+.closet-question {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.closet-answer {
+    font-size: 20px;
+}

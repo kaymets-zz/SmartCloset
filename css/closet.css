@@ -1,0 +1,190 @@
+﻿body {
+    padding-top: 110px;
+}
+
+table {
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 5px darkgray;
+    box-shadow: 1px 1px 5px darkgray;
+    border-collapse: separate;
+    border-radius: 2px;
+}
+
+th {
+    color: #009999;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+td {
+    font-size: 14px;
+    cursor: default;
+}
+
+.sub-header {
+    background-color: #009999;
+    height: 45px;
+    margin-top:55px;
+    color: white;
+}
+
+.sub-header div {
+    height: 100%;
+}
+
+.sub-header .btn-filter,.sub-header .btn-additem {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    height: 39px;
+    margin: 3px 0px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+    .sub-header .btn-filter:hover, .sub-header .btn-additem:hover {
+        color: black;
+    }
+
+.btn-filter {
+    border-right: solid 1px rgba(235, 235, 235, .2);
+}
+
+.btn-additem {
+    border-left: solid 1px rgba(235, 235, 235, .2);
+}
+
+/*.search-group {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.search-btn {
+    border: solid 2px #009999;
+    color: #009999;
+}
+
+.search-input {
+    border: solid 2px #009999;
+    color: #009999;
+    height: 36px;
+}*/
+
+.btn-action {
+    font-size: 20px;
+    border: solid 2px #009999;
+    border-radius: 3px;
+    color: #009999;
+    display: table-cell;
+    width: 1%;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .btn-action:active {
+        background-color: lightgray;
+    }
+
+    .btn-action:hover {
+        background-color: lightgray;
+    }
+
+.active-action {
+    color: white !important;
+    background-color: #009999 !important;
+}
+
+    .active-action:hover {
+        color: white;
+        background-color: #009999;
+    }
+
+th#basics-item, th#wear-item {
+    width: 30%;
+}
+
+th#basics-brand, th#wear-brand {
+    width: 17.5%;
+}
+
+th#basics-type, th#wear-type {
+    width: 10%;
+}
+
+th#basics-color {
+    width: 15%;
+}
+
+th#basics-worn {
+    width: 17.5%;
+}
+
+th#basics-dirty {
+    width: 10%;
+}
+
+.colorBlock {
+    height: 1.5em;
+    width: 1.5em;
+    border: solid lightgray 1px;
+    -webkit-box-shadow: 1px 1px 2px lightgray;
+    box-shadow: 1px 1px 2px lightgray;
+    margin: 0px 2px;
+    float: left;
+}
+
+.headerIcon {
+    color: lightgray;
+    margin-left: 10px;
+}
+
+.headerIconSelected {
+    color: black;
+}
+
+.actions {
+    background-color: white;
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 5px darkgray;
+    box-shadow: 1px 1px 5px darkgray;
+    border-radius: 2px;
+}
+
+.ui-instruction{
+    font-size: 18px;
+    font-weight: bold;
+}
+.add-item-section {
+    margin: 10px 0px;
+}
+
+.add-item-section-header {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.btn-clothing-option {
+    border: solid lightgray 1px;
+    border-radius: 2px;
+    padding: 2px 10px;
+    margin-bottom: 5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.btn-clothing-option:hover {
+    background-color: lightgray;
+}
+
+.btn-clothing-option:active {
+    background-color: #009999;
+    color: white;
+}
+
+.active-btn-clothing-option {
+    background-color: #009999 !important;
+    color: white !important;
+}

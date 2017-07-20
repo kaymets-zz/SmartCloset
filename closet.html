@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smarter Closet</title>
+
+    <script type="text/javascript" src="scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="scripts/closet.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/basic.css" rel="stylesheet" />
+    <link href="css/closet.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html">
+                    <div class="fa-stack fa-lg">
+                        <i class="fa fa-cloud fa-stack-2x cloud-icon"></i>
+                        <i class="fa fa-tags fa-stack-1x tags-icon"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="closet.html"><i class="fa fa-star"></i>  Closet</a></li>
+                    <li><a href="calendar.html"><i class="fa fa-calendar"></i>  Calendar</a></li>
+                    <li><a href="Laundry.html"><i class="fa fa-fire"></i>  Laundry</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid navbar-fixed-top sub-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="btn-filter">Filter  <i class="fa fa-filter"></i></div>
+                </div>
+                <div class="col-sm-8"></div>
+                <div class="col-sm-2">
+                    <div class="btn-additem"><i class="fa fa-plus-circle"></i>  Add Item</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="items" class="col-md-12">
+                <div class="tab-content">
+                    <div id="tab-basics" class="tab-pane active">
+                        <table id="clothing-basics" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th id="basics-item" class="sortable" data-sort="name">Item<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="basics-brand" class="sortable filterable" data-sort="name">Brand<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="basics-type" class="sortable filterable" data-sort="name">Type<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="basics-color" class="filterable">Color</th>
+                                    <th id="basics-worn" class="sortable" data-sort="date">Last Worn<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="basics-dirty" class="sortable filterable" data-sort="name">Dirty<i class="headerIcon fa fa-sort"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="expanded-details-row" style="display: none;">
+                                    <td colspan="6">
+                                        <div id="expanded-item-name">Name of the item</div>
+                                        <div>
+                                            <span id="expanded-item-type">Dress | </span>
+                                            <span id="expanded-item-subtype">Tunic | </span>
+                                            <span id="expanded-item-brand">Brand Name</span>
+                                        </div>
+                                        <div>
+                                            <span>Size: </span><span id="expanded-item-size">Small</span>
+                                        </div>
+                                        <div>
+                                            <span id="expanded-item-neckline">Neckline: </span><span>Boat</span>
+                                        </div>
+                                        <div>
+                                            <span id="expanded-item-sleeve">Sleeves: </span><span>long</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div id="tab-wear" class="tab-pane">
+                        <table id="clothing-wear" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th id="wear-item" class="sortable" data-sort="name">Item<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="wear-brand" class="sortable filterable" data-sort="name">Brand<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="wear-type" class="sortable filterable" data-sort="name">Type<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="wear-purchased" class="sortable" data-sort="date">Purchased<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="wear-cost" class="sortable filterable" data-sort="number">Cost<i class="headerIcon fa fa-sort"></i></th>
+                                    <th id="wear-timesworn" class="sortable" data-sort="number">Times Worn<i class="headerIcon fa fa-sort"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="expanded-details-row" style="display: none;">
+                                    <td colspan="6">
+                                        <div id="expanded-item-name">Name of the item</div>
+                                        <div>
+                                            <span id="expanded-item-type">Dress | </span>
+                                            <span id="expanded-item-subtype">Tunic | </span>
+                                            <span id="expanded-item-brand">Brand Name</span>
+                                        </div>
+                                        <div>
+                                            <span>Size: </span><span id="expanded-item-size">Small</span>
+                                        </div>
+                                        <div>
+                                            <span id="expanded-item-neckline">Neckline: </span><span>Boat</span>
+                                        </div>
+                                        <div>
+                                            <span id="expanded-item-sleeve">Sleeves: </span><span>long</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div id="footer" class="footer container">
+        <footer>
+            <p class="pull-right">&copy; Rachel Kmetz 2014</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+
+<!--<div class="input-group margin-bottom-sm item-search">
+                    <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+                    <input id="search-text-input" class="form-control" type="text" placeholder="Search...">
+                </div>-->
+<!--<div class="input-group search-group">
+    <input type="text" class="form-control search-input" placeholder="Search for stuff by name, brand or type...">
+    <span class="input-group-btn">
+        <button class="btn btn-default search-btn" type="button"><i class="fa fa-search fa-fw"></i></button>
+    </span>
+</div>
+<ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="active"><a href="#tab-basics" role="tab" data-toggle="tab">Basic Facts</a></li>
+    <li><a href="#tab-wear" role="tab" data-toggle="tab">Wear &amp; Tear</a></li>
+</ul>-->
+
+<!--<div id="actions" class="col-md-3 actions">
+                <div id="btn-filter" class="btn-action active-action">Find</div>
+                <div id="btn-outfit" class="btn-action">Wear</div>
+                <div id="btn-add-item" class="btn-action">Add</div>
+                <hr />
+                <div id="filter-item-ui" class="">
+                    <div class="ui-instruction">Get specific...</div>
+                    <div class="add-item-section clothing-types">
+                        <span class="add-item-section-header text-uppercase">Type</span>
+                        <div class="add-item-section-options" data-table="type">
+                            <span class="btn-clothing-option" data-table="dress">Dress</span>
+                            <span class="btn-clothing-option" data-table="pants">Pants</span>
+                            <span class="btn-clothing-option" data-table="romper">Romper</span>
+                            <span class="btn-clothing-option" data-table="shorts">Shorts</span>
+                            <span class="btn-clothing-option" data-table="skirt">Skirt</span>
+                            <span class="btn-clothing-option" data-table="tanktop">Tank Top</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-item-ui" class="" style="display: none">
+                    <div class="add-item-section clothing-types">
+                        <span class="add-item-section-header text-uppercase">Type</span>
+                        <div class="add-item-section-options" data-table="type">
+                            <span class="btn-clothing-option" data-table="dress">Dress</span>
+                            <span class="btn-clothing-option" data-table="pants">Pants</span>
+                            <span class="btn-clothing-option" data-table="romper">Romper</span>
+                            <span class="btn-clothing-option" data-table="shorts">Shorts</span>
+                            <span class="btn-clothing-option" data-table="skirt">Skirt</span>
+                            <span class="btn-clothing-option" data-table="top">Top</span>
+                        </div>
+                    </div>
+                    <div class="add-item-section neckline-types">
+                        <span class="add-item-section-header text-uppercase">Neckline</span>
+                        <div class="add-item-section-options" data-table="neckline">
+                            <span class="btn-clothing-option" data-table="asymmetric">Asymmetric</span>
+                            <span class="btn-clothing-option" data-table="boat">Boat</span>
+                            <span class="btn-clothing-option" data-table="halter">Halter</span>
+                            <span class="btn-clothing-option" data-table="offshoulder">Off Shoulder</span>
+                            <span class="btn-clothing-option" data-table="scoop">Scoop</span>
+                            <span class="btn-clothing-option" data-table="square">Square</span>
+                            <span class="btn-clothing-option" data-table="straight">Straight</span>
+                            <span class="btn-clothing-option" data-table="sweetheart">Sweetheart</span>
+                            <span class="btn-clothing-option" data-table="turtle">Turtle</span>
+                            <span class="btn-clothing-option" data-table="vneck">V-neck</span>
+                        </div>
+                    </div>
+                    <div class="add-item-section sleeve-styles">
+                        <span class="add-item-section-header text-uppercase">Sleeves</span>
+                        <div class="add-item-section-options" data-table="sleeve">
+                            <span class="btn-clothing-option" data-table="strapless">Strapless</span>
+                            <span class="btn-clothing-option" data-table="spaghetti">Spaghetti</span>
+                            <span class="btn-clothing-option" data-table="sleeveless">Sleeveless</span>
+                            <span class="btn-clothing-option" data-table="cap">Cap</span>
+                            <span class="btn-clothing-option" data-table="short">Short</span>
+                            <span class="btn-clothing-option" data-table="threequarter">3/4</span>
+                            <span class="btn-clothing-option" data-table="long">Long</span>
+                        </div>
+                    </div>
+                    <div class="add-item-section dress-subtypes">
+                        <span class="add-item-section-header text-uppercase">Dress Types</span>
+                        <div class="add-item-section-options" data-table="subtype">
+                            <span class="btn-clothing-option" data-table="aline">A-line</span>
+                            <span class="btn-clothing-option" data-table="dropwaist">Drop Waist</span>
+                            <span class="btn-clothing-option" data-table="empire">Empire</span>
+                            <span class="btn-clothing-option" data-table="highwaist">High Waist</span>
+                            <span class="btn-clothing-option" data-table="maxi">Maxi</span>
+                            <span class="btn-clothing-option" data-table="sheath">Sheath</span>
+                            <span class="btn-clothing-option" data-table="shift">Shift</span>
+                            <span class="btn-clothing-option" data-table="tent">Tent</span>
+                            <span class="btn-clothing-option" data-table="tunic">Tunic</span>
+                        </div>
+                    </div>
+                    <div class="add-item-section pants-subtypes">
+                        <span class="add-item-section-header text-uppercase">Pants Types</span>
+                        <div class="add-item-section-options" data-table="subtype">
+                            <span class="btn-clothing-option" data-table="capri">Capri</span>
+                            <span class="btn-clothing-option" data-table="dress">Dress</span>
+                            <span class="btn-clothing-option" data-table="jeans">Jeans</span>
+                            <span class="btn-clothing-option" data-table="leggings">Leggings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
